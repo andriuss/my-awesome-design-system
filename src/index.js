@@ -13,6 +13,7 @@ import {GlobalStyle, darkTheme, defaultTheme} from './utils';
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
@@ -33,6 +34,14 @@ const App = () => {
           }}
           onClick={() => setUseDarkTheme(false)}
         >Default theme</button>
+        <button
+          style={{
+            margin: "0 16px 24px",
+            padding: "8px",
+            backgroundColor: "none"
+          }}
+          onClick={() => setShowModal(!showModal)}
+        >Toggle modal</button>
         <div style={{
           backgroundColor: useDarkTheme ? defaultTheme.primaryColor : darkTheme.primaryColor,
           width: "100vw",
@@ -84,7 +93,7 @@ const App = () => {
           &nbsp;
           <TertiaryButton disabled>Tertiary</TertiaryButton>
           &nbsp; */}
-          <SignUpModal/>
+          <SignUpModal showModal={showModal} setShowModal={setShowModal} />
           <GlobalStyle />
         </div>
       </main>

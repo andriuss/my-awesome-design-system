@@ -1,0 +1,35 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { PrimaryButton, SecondaryButton, TertiaryButton } from "./Buttons";
+import { SignUpModal } from './Modal';
+import { action } from '@storybook/addon-actions';
+import { boolean } from '@storybook/addon-knobs';
+
+<Meta title="Design System|Modals" component={<SignUpModal showModal={boolean('showModal', true)} />} />
+
+# Modal
+
+Modal is used to display information on top of current content with backdrop.
+
+## Usage
+
+Used to show additional data for the page.
+
+## Sign Up Modal
+
+SignUpModal is used for new users to sign up to the system.
+
+<Preview withToolbar>
+  <Story name="signUp">
+    <SignUpModal showModal={boolean('showModal', true)} />
+  </Story>
+</Preview>
+
+## Sign Up Modal hidden
+
+SignUpModal is hidden.
+
+<Preview withToolbar>
+  <Story name="hidden">
+    <SignUpModal showModal={boolean('showModal', false)} />
+  </Story>
+</Preview>
